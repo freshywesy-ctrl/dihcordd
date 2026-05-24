@@ -5,9 +5,9 @@ import discord
 from discord import app_commands
 
 # ── Startup input ─────────────────────────────────────────────────────────────
-TOKEN    = input("Enter your Discord bot token: ").strip()
-GUILD_ID = int(input("Enter your Guild (Server) ID: ").strip())
-
+import os
+TOKEN    = os.environ.get("DISCORD_TOKEN")
+GUILD_ID = int(os.environ.get("GUILD_ID"))
 if not TOKEN:
     raise RuntimeError("No token entered.")
 
